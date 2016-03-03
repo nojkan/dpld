@@ -1,0 +1,19 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+
+GET      /                           controllers.Application.index
+GET      /populate                  controllers.Application.populate
+POST      /count                    controllers.Application.count
+GET     /object/:id                 controllers.Application.get(id : String)
+POST     /object/update/:id                controllers.Application.update(id : String)
+PUT     /object/:id                 controllers.Application.put(id : String)
+DELETE  /object/:id				    controllers.Application.put(id : String)
+# GET     /object/count?color={color}        controllers.Application.count(id : String)
+GET     /bulk/update/from/:fromcolor/to/:tocolor	controllers.Application.bulkupdate(fromcolor : String, tocolor : String)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
